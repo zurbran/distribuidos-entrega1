@@ -60,9 +60,7 @@
 
 % Creates a new command to include a C file, the first parameter is the filename of the script, the second parameter is the caption
 \newcommand{\ccode}[2]{
-\begin{itemize}
-\item[]\lstinputlisting[caption=#2,label=#1, language=C]{#1}
-\end{itemize}
+\lstinputlisting[language=C]{#1}
 }
 
 % Creates a new command to include a matlab file, the first parameter is the filename of the script, the second parameter is the caption
@@ -75,7 +73,7 @@
 % Creates a new command to include a bash script, the first parameter is the filename of the script, the second parameter is the caption
 \newcommand{\bashscript}[2]{
 \begin{itemize}
-\item[]\lstinputlisting[caption=#2,label=#1, language=Bash]{#1}
+\item[]\lstlisting[caption=#2,label=#1, language=Bash]{#1}
 \end{itemize}
 }
 

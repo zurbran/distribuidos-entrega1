@@ -3,6 +3,10 @@
 #include <stdlib.h>
 #include <sys/time.h>
 
+#if defined _OPENMP
+#include <omp.h>
+#endif
+
 double dwalltime()
 {
 	double sec;
@@ -27,7 +31,9 @@ int main (int argc,char* argv[])
 
 	A = (int64_t*)malloc(sizeof(int64_t)*N);
 
-	omp_set_num_threads(T);
+	#if defined _OPENMP
+		omp_set_num_threads(T);
+	#endif
 
 	for (int64_t i = 0; i < N; i++) 
 	{

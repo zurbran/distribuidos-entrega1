@@ -251,4 +251,164 @@ Tiempo en segundos 58.006445
 Tiempo en segundos 628.503476
 ./2_openmp_seq 2048 1
 Tiempo en segundos 634.987229
+gcc -o 2_pthreads 2_pthreads.c -pthread -Wall -Wextra
+./2_pthreads 512 2
+Tiempo en segundos 1.080354
+./2_pthreads 512 2
+Tiempo en segundos 1.080846
+./2_pthreads 512 2
+Tiempo en segundos 1.058434
+./2_pthreads 512 2
+Tiempo en segundos 1.080374
+./2_pthreads 512 4
+Tiempo en segundos 0.568844
+./2_pthreads 512 4
+Tiempo en segundos 0.559781
+./2_pthreads 512 4
+Tiempo en segundos 0.560030
+./2_pthreads 512 4
+Tiempo en segundos 0.561344
+./2_pthreads 1024 2
+Tiempo en segundos 8.619043
+./2_pthreads 1024 2
+Tiempo en segundos 8.620120
+./2_pthreads 1024 2
+Tiempo en segundos 8.620706
+./2_pthreads 1024 2
+Tiempo en segundos 8.617712
+./2_pthreads 1024 4
+Tiempo en segundos 4.549012
+./2_pthreads 1024 4
+Tiempo en segundos 4.527745
+./2_pthreads 1024 4
+Tiempo en segundos 4.527327
+./2_pthreads 1024 4
+Tiempo en segundos 4.520993
+./2_pthreads 2048 2
+Tiempo en segundos 68.793332
+./2_pthreads 2048 2
+Tiempo en segundos 68.864421
+./2_pthreads 2048 2
+Tiempo en segundos 68.974870
+./2_pthreads 2048 2
+Tiempo en segundos 68.928773
+./2_pthreads 2048 4
+Tiempo en segundos 39.404633
+./2_pthreads 2048 4
+Tiempo en segundos 39.468574
+./2_pthreads 2048 4
+Tiempo en segundos 38.809931
+./2_pthreads 2048 4
+Tiempo en segundos 39.125665
+gcc -o 3_openmp 3_openmp.c -Wall -Wextra -fopenmp
+./3_openmp 160000000 2
+Tiempo en segundos 0.220874 
+Cantidad de pares: 80000000 
+./3_openmp 160000000 2
+Tiempo en segundos 0.222830 
+Cantidad de pares: 80000000 
+./3_openmp 160000000 2
+Tiempo en segundos 0.219548 
+Cantidad de pares: 80000000 
+./3_openmp 160000000 2
+Tiempo en segundos 0.220870 
+Cantidad de pares: 80000000 
+./3_openmp 160000000 4
+Tiempo en segundos 0.111642 
+Cantidad de pares: 80000000 
+./3_openmp 160000000 4
+Tiempo en segundos 0.112250 
+Cantidad de pares: 80000000 
+./3_openmp 160000000 4
+Tiempo en segundos 0.111886 
+Cantidad de pares: 80000000 
+./3_openmp 160000000 4
+Tiempo en segundos 0.111810 
+Cantidad de pares: 80000000 
+./3_openmp 320000000 2
+Tiempo en segundos 0.440466 
+Cantidad de pares: 160000000 
+./3_openmp 320000000 2
+Tiempo en segundos 0.442127 
+Cantidad de pares: 160000000 
+./3_openmp 320000000 2
+Tiempo en segundos 0.440756 
+Cantidad de pares: 160000000 
+./3_openmp 320000000 2
+Tiempo en segundos 0.444150 
+Cantidad de pares: 160000000 
+./3_openmp 320000000 4
+Tiempo en segundos 0.224115 
+Cantidad de pares: 160000000 
+./3_openmp 320000000 4
+Tiempo en segundos 0.224191 
+Cantidad de pares: 160000000 
+./3_openmp 320000000 4
+Tiempo en segundos 0.223279 
+Cantidad de pares: 160000000 
+./3_openmp 320000000 4
+Tiempo en segundos 0.223924 
+Cantidad de pares: 160000000 
+./3_openmp 640000000 2
+Tiempo en segundos 0.880153 
+Cantidad de pares: 320000000 
+./3_openmp 640000000 2
+Tiempo en segundos 0.882223 
+Cantidad de pares: 320000000 
+./3_openmp 640000000 2
+Tiempo en segundos 0.881136 
+Cantidad de pares: 320000000 
+./3_openmp 640000000 2
+Tiempo en segundos 0.881558 
+Cantidad de pares: 320000000 
+./3_openmp 640000000 4
+Tiempo en segundos 0.448076 
+Cantidad de pares: 320000000 
+./3_openmp 640000000 4
+Tiempo en segundos 0.445207 
+Cantidad de pares: 320000000 
+./3_openmp 640000000 4
+Tiempo en segundos 0.534994 
+Cantidad de pares: 320000000 
+./3_openmp 640000000 4
+Tiempo en segundos 0.465995 
+Cantidad de pares: 320000000
+ubuntu@ubuntu:~/distribuidos-entrega1/1/3/openmp$ ./3_openmp_seq 160000000 1
+Tiempo en segundos 0.323206 
+Cantidad de pares: 80000000 
+ubuntu@ubuntu:~/distribuidos-entrega1/1/3/openmp$ ./3_openmp_seq 160000000 1
+Tiempo en segundos 0.322715 
+Cantidad de pares: 80000000 
+ubuntu@ubuntu:~/distribuidos-entrega1/1/3/openmp$ ./3_openmp_seq 160000000 1
+Tiempo en segundos 0.322754 
+Cantidad de pares: 80000000 
+ubuntu@ubuntu:~/distribuidos-entrega1/1/3/openmp$ ./3_openmp_seq 160000000 1
+Tiempo en segundos 0.323270 
+Cantidad de pares: 80000000 
+ubuntu@ubuntu:~/distribuidos-entrega1/1/3/openmp$ ./3_openmp_seq 320000000 1
+Tiempo en segundos 0.645494 
+Cantidad de pares: 160000000 
+ubuntu@ubuntu:~/distribuidos-entrega1/1/3/openmp$ ./3_openmp_seq 320000000 1
+Tiempo en segundos 0.646495 
+Cantidad de pares: 160000000 
+ubuntu@ubuntu:~/distribuidos-entrega1/1/3/openmp$ ./3_openmp_seq 320000000 1
+Tiempo en segundos 0.646435 
+Cantidad de pares: 160000000 
+ubuntu@ubuntu:~/distribuidos-entrega1/1/3/openmp$ ./3_openmp_seq 320000000 1
+Tiempo en segundos 0.646099 
+Cantidad de pares: 160000000 
+ubuntu@ubuntu:~/distribuidos-entrega1/1/3/openmp$ ./3_openmp_seq 640000000 1
+Tiempo en segundos 1.291188 
+Cantidad de pares: 320000000 
+ubuntu@ubuntu:~/distribuidos-entrega1/1/3/openmp$ ./3_openmp_seq 640000000 1
+Tiempo en segundos 1.291264 
+Cantidad de pares: 320000000 
+ubuntu@ubuntu:~/distribuidos-entrega1/1/3/openmp$ ./3_openmp_seq 640000000 1
+Tiempo en segundos 1.292871 
+Cantidad de pares: 320000000 
+ubuntu@ubuntu:~/distribuidos-entrega1/1/3/openmp$ ./3_openmp_seq 640000000 1
+Tiempo en segundos 1.293148 
+Cantidad de pares: 320000000 
+
+
 

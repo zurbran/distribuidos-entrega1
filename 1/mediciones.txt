@@ -1,0 +1,254 @@
+gcc -o 1_openmp 1_openmp.c -Wall -Wextra -fopenmp
+gcc -o 1_openmp_seq 1_openmp.c -Wall -Wextra -Wno-unknown-pragmas
+./1_openmp 512 2
+Tiempo en segundos 0.187735
+Multiplicacion de matrices resultado correcto
+./1_openmp 512 2
+Tiempo en segundos 0.187727
+Multiplicacion de matrices resultado correcto
+./1_openmp 512 2
+Tiempo en segundos 0.187717
+Multiplicacion de matrices resultado correcto
+./1_openmp 512 2
+Tiempo en segundos 0.187765
+Multiplicacion de matrices resultado correcto
+./1_openmp 512 4
+Tiempo en segundos 0.100022
+Multiplicacion de matrices resultado correcto
+./1_openmp 512 4
+Tiempo en segundos 0.097417
+Multiplicacion de matrices resultado correcto
+./1_openmp 512 4
+Tiempo en segundos 0.097357
+Multiplicacion de matrices resultado correcto
+./1_openmp 512 4
+Tiempo en segundos 0.098657
+Multiplicacion de matrices resultado correcto
+./1_openmp 1024 2
+Tiempo en segundos 1.527300
+Multiplicacion de matrices resultado correcto
+./1_openmp 1024 2
+Tiempo en segundos 1.528427
+Multiplicacion de matrices resultado correcto
+./1_openmp 1024 2
+Tiempo en segundos 1.528126
+Multiplicacion de matrices resultado correcto
+./1_openmp 1024 2
+Tiempo en segundos 1.528888
+Multiplicacion de matrices resultado correcto
+./1_openmp 1024 4
+Tiempo en segundos 0.772564
+Multiplicacion de matrices resultado correcto
+./1_openmp 1024 4
+Tiempo en segundos 0.775525
+Multiplicacion de matrices resultado correcto
+./1_openmp 1024 4
+Tiempo en segundos 0.777395
+Multiplicacion de matrices resultado correcto
+./1_openmp 1024 4
+Tiempo en segundos 0.771325
+Multiplicacion de matrices resultado correcto
+./1_openmp 2048 2
+Tiempo en segundos 12.214154
+Multiplicacion de matrices resultado correcto
+./1_openmp 2048 2
+Tiempo en segundos 12.204757
+Multiplicacion de matrices resultado correcto
+./1_openmp 2048 2
+Tiempo en segundos 12.207621
+Multiplicacion de matrices resultado correcto
+./1_openmp 2048 2
+Tiempo en segundos 12.206982
+Multiplicacion de matrices resultado correcto
+./1_openmp 2048 4
+Tiempo en segundos 6.129219
+Multiplicacion de matrices resultado correcto
+./1_openmp 2048 4
+Tiempo en segundos 6.211675
+Multiplicacion de matrices resultado correcto
+./1_openmp 2048 4
+Tiempo en segundos 6.132024
+Multiplicacion de matrices resultado correcto
+./1_openmp 2048 4
+Tiempo en segundos 6.151401
+Multiplicacion de matrices resultado correcto
+./1_openmp_seq 512 1
+Tiempo en segundos 0.375980
+Multiplicacion de matrices resultado correcto
+./1_openmp_seq 512 1
+Tiempo en segundos 0.376775
+Multiplicacion de matrices resultado correcto
+./1_openmp_seq 512 1
+Tiempo en segundos 0.375048
+Multiplicacion de matrices resultado correcto
+./1_openmp_seq 512 1
+Tiempo en segundos 0.375148
+Multiplicacion de matrices resultado correcto
+./1_openmp_seq 1024 1
+Tiempo en segundos 3.061807
+Multiplicacion de matrices resultado correcto
+./1_openmp_seq 1024 1
+Tiempo en segundos 3.058998
+Multiplicacion de matrices resultado correcto
+./1_openmp_seq 1024 1
+Tiempo en segundos 3.046207
+Multiplicacion de matrices resultado correcto
+./1_openmp_seq 1024 1
+Tiempo en segundos 3.055177
+Multiplicacion de matrices resultado correcto
+./1_openmp_seq 2048 1
+Tiempo en segundos 24.551119
+Multiplicacion de matrices resultado correcto
+./1_openmp_seq 2048 1
+Tiempo en segundos 24.410414
+Multiplicacion de matrices resultado correcto
+./1_openmp_seq 2048 1
+Tiempo en segundos 24.448049
+Multiplicacion de matrices resultado correcto
+./1_openmp_seq 2048 1
+Tiempo en segundos 24.456586
+Multiplicacion de matrices resultado correcto
+gcc -o 1_pthreads 1_pthreads.c -pthread -Wall -Wextra -g
+./1_pthreads 512 2
+Tiempo en segundos 0.189378
+Multiplicacion de matrices resultado correcto
+./1_pthreads 512 2
+Tiempo en segundos 0.189381
+Multiplicacion de matrices resultado correcto
+./1_pthreads 512 2
+Tiempo en segundos 0.189519
+Multiplicacion de matrices resultado correcto
+./1_pthreads 512 2
+Tiempo en segundos 0.189629
+Multiplicacion de matrices resultado correcto
+./1_pthreads 512 4
+Tiempo en segundos 0.103748
+Multiplicacion de matrices resultado correcto
+./1_pthreads 512 4
+Tiempo en segundos 0.101531
+Multiplicacion de matrices resultado correcto
+./1_pthreads 512 4
+Tiempo en segundos 0.101485
+Multiplicacion de matrices resultado correcto
+./1_pthreads 512 4
+Tiempo en segundos 0.100180
+Multiplicacion de matrices resultado correcto
+./1_pthreads 1024 2
+Tiempo en segundos 1.531254
+Multiplicacion de matrices resultado correcto
+./1_pthreads 1024 2
+Tiempo en segundos 1.531897
+Multiplicacion de matrices resultado correcto
+./1_pthreads 1024 2
+Tiempo en segundos 1.530631
+Multiplicacion de matrices resultado correcto
+./1_pthreads 1024 2
+Tiempo en segundos 1.530959
+Multiplicacion de matrices resultado correcto
+./1_pthreads 1024 4
+Tiempo en segundos 0.774683
+Multiplicacion de matrices resultado correcto
+./1_pthreads 1024 4
+Tiempo en segundos 0.771032
+Multiplicacion de matrices resultado correcto
+./1_pthreads 1024 4
+Tiempo en segundos 0.773452
+Multiplicacion de matrices resultado correcto
+./1_pthreads 1024 4
+Tiempo en segundos 0.771429
+Multiplicacion de matrices resultado correcto
+./1_pthreads 2048 2
+Tiempo en segundos 12.245714
+Multiplicacion de matrices resultado correcto
+./1_pthreads 2048 2
+Tiempo en segundos 12.244246
+Multiplicacion de matrices resultado correcto
+./1_pthreads 2048 2
+Tiempo en segundos 12.259185
+Multiplicacion de matrices resultado correcto
+./1_pthreads 2048 2
+Tiempo en segundos 12.246419
+Multiplicacion de matrices resultado correcto
+./1_pthreads 2048 4
+Tiempo en segundos 6.163424
+Multiplicacion de matrices resultado correcto
+./1_pthreads 2048 4
+Tiempo en segundos 6.170786
+Multiplicacion de matrices resultado correcto
+./1_pthreads 2048 4
+Tiempo en segundos 6.186908
+Multiplicacion de matrices resultado correcto
+./1_pthreads 2048 4
+Tiempo en segundos 6.164092
+Multiplicacion de matrices resultado correcto
+gcc -o 2_openmp 2_openmp.c -Wall -Wextra -fopenmp
+gcc -o 2_openmp_seq 2_openmp.c -Wall -Wextra -Wno-unknown-pragmas
+./2_openmp 512 2
+Tiempo en segundos 2.245132
+./2_openmp 512 2
+Tiempo en segundos 2.285228
+./2_openmp 512 2
+Tiempo en segundos 2.092112
+./2_openmp 512 2
+Tiempo en segundos 2.270504
+./2_openmp 512 4
+Tiempo en segundos 1.193699
+./2_openmp 512 4
+Tiempo en segundos 1.256260
+./2_openmp 512 4
+Tiempo en segundos 1.242295
+./2_openmp 512 4
+Tiempo en segundos 1.295808
+./2_openmp 1024 2
+Tiempo en segundos 24.033468
+./2_openmp 1024 2
+Tiempo en segundos 26.662107
+./2_openmp 1024 2
+Tiempo en segundos 26.192665
+./2_openmp 1024 2
+Tiempo en segundos 32.249475
+./2_openmp 1024 4
+Tiempo en segundos 18.685659
+./2_openmp 1024 4
+Tiempo en segundos 17.281567
+./2_openmp 1024 4
+Tiempo en segundos 17.812550
+./2_openmp 1024 4
+Tiempo en segundos 17.399498
+./2_openmp 2048 2
+Tiempo en segundos 302.128857
+./2_openmp 2048 2
+Tiempo en segundos 309.552467
+./2_openmp 2048 2
+Tiempo en segundos 314.864032
+./2_openmp 2048 2
+Tiempo en segundos 308.286442
+./2_openmp 2048 4
+Tiempo en segundos 191.605390
+./2_openmp 2048 4
+Tiempo en segundos 194.101395
+./2_openmp 2048 4
+Tiempo en segundos 200.150992
+./2_openmp 2048 4
+Tiempo en segundos 192.226079
+./2_openmp_seq 512 1
+Tiempo en segundos 3.309718
+./2_openmp_seq 512 1
+Tiempo en segundos 3.470251
+./2_openmp_seq 512 1
+Tiempo en segundos 3.125540
+./2_openmp_seq 512 1
+Tiempo en segundos 3.141900
+./2_openmp_seq 1024 1
+Tiempo en segundos 56.765162
+./2_openmp_seq 1024 1
+Tiempo en segundos 57.118833
+./2_openmp_seq 1024 1
+Tiempo en segundos 58.039135
+./2_openmp_seq 1024 1
+Tiempo en segundos 58.006445
+./2_openmp_seq 2048 1
+Tiempo en segundos 628.503476
+./2_openmp_seq 2048 1
+Tiempo en segundos 634.987229
+

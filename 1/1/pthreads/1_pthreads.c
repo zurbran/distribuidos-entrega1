@@ -20,19 +20,21 @@ typedef struct threads_args
 {
 	int start;
 	int end;
-}
+} threads_args;
 
 void mulMatrices(double *A, double *B, double *C, int start, int end)
 {
+	double sum;
 	for(int i = start; i <= end; i++)
 	{
 		for(int j = 0; j < N; j++)
 		{
-			asignarValorMatrizFila(C, i, j, N, 0);
+			sum = 0.0;
 			for(int k = 0; k < N; k++)
 			{
-				asignarValorMatrizFila(C, i, j, N, (obtenerValorMatrizFila(C, i, j, N) + obtenerValorMatrizFila(A, i, k, N)*obtenerValorMatrizColumna(B, k, j, N));
+				sum += obtenerValorMatrizFila(A, i, k, N)*obtenerValorMatrizColumna(B, k, j, N);
 			}
+			 asignarValorMatrizFila(C, i, j, N, sum);
 		}
 	}
 }
@@ -66,7 +68,7 @@ void *ejercicioUno(void *args)
 	// Copia A en B pero ordenado por columnas
 	filasAColumnas(A, B, arg->start, arg->end);
 
-	pthread_barrier_wait(&barrier);
+	pthread_barrier_wait(&threadBarrier);
 	
 	// Realiza la multiplicacion
 	mulMatrices(A, B, C, arg->start, arg->end);
@@ -98,7 +100,7 @@ int main(int argc,char*argv[])
 	{
 		for(int j = 0; j < N; j++)
 		{
-			setValor(A, i, j, ORDENXFILAS, N, 1);
+			asignarValorMatrizFila(A, i, j, N, 1);
 		}
 	}   
 
@@ -125,7 +127,7 @@ int main(int argc,char*argv[])
 		pthread_create(&threads[i], NULL, &ejercicioUno, &threadLimits[i]);
 	}
 
-	for (int i = 0; i < t; i++)
+	for (int i = 0; i < T; i++)
         pthread_join(threads[i], NULL);
 
 	printf("Tiempo en segundos %f\n", dwalltime() - timetick);
@@ -136,7 +138,7 @@ int main(int argc,char*argv[])
 	{
 		for(int j = 0; j < N; j++)
 		{
-			if(getValor(C, i, j, ORDENXFILAS, N) != N)
+			if(obtenerValorMatrizFila(C, i, j, N) != N)
 			{
 				correct = 0;
 				break;

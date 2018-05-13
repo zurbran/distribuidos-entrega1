@@ -39,7 +39,7 @@ typedef struct threads_args
 
 void escalarPorMatriz(double *A, double *C, double escalar, int start, int end)
 {
-	for(int i= start; i <= end; i++)
+	for(int i= start; i < end; i++)
 	{
 		C[i]= escalar * A[i];
 	}
@@ -47,7 +47,7 @@ void escalarPorMatriz(double *A, double *C, double escalar, int start, int end)
 
 void sumarMatrices(double *A, double *B, double *C, int start, int end)
 {
-	for(int i= start; i <= end; i++)
+	for(int i= start; i < end; i++)
 	{
 		C[i]= A[i] + B[i];
 	}
@@ -56,7 +56,7 @@ void sumarMatrices(double *A, double *B, double *C, int start, int end)
 void mulMatrices(double *A, double *B, double *C, int start, int end)
 {
 	double sum;
-	for(int i = start; i <= end; i++)
+	for(int i = start; i < end; i++)
 	{
 		for(int j = 0; j < N; j++)
 		{
@@ -72,7 +72,7 @@ void mulMatrices(double *A, double *B, double *C, int start, int end)
 
 void filasAColumnas(double *A, double *B, int start, int end)
 {
-	for(int i = start; i <= end; i++)
+	for(int i = start; i < end; i++)
 	{
 		for(int j = 0; j < N; j++)
 		{
@@ -85,7 +85,7 @@ void sumarMatriz(double *M, int start, int end, pthread_mutex_t *mutex)
 {
     double total = 0.0;
 
-    for (int i = start; i <= end; i++)
+    for (int i = start; i < end; i++)
     {
         total += M[i];
     }
@@ -98,7 +98,7 @@ void sumarMatriz(double *M, int start, int end, pthread_mutex_t *mutex)
 void triangularInferiorPorCuadrada(double *L, double *A, double *C, int start, int end)
 {
 	double sum;
-	for(int i = start; i <= end; i++)
+	for(int i = start; i < end; i++)
 	{
 		for(int j = 0; j < N; j++)
 		{
@@ -115,7 +115,7 @@ void triangularInferiorPorCuadrada(double *L, double *A, double *C, int start, i
 void triangularSuperiorPorCuadrada(double *U, double *B, double *C,int start, int end)
 {
 	double sum;
-	for(int i = start; i <= end; i++)
+	for(int i = start; i < end; i++)
 	{
 		for(int j = 0; j < N; j++)
 		{
@@ -176,6 +176,7 @@ void *ejercicioDos(void *args){
 	}
 	// Fin de calcular promedios
 	pthread_barrier_wait(&threadBarrier);
+
 	// Paso matriz C a columnas para hacer A*C
 	filasAColumnas(C, tC, arg->start, arg->end);
 
@@ -318,42 +319,17 @@ int main(int argc,char*argv[])
 
 	timetick = dwalltime();
 
-	int extra = N % T;
-	int extraVect = (N*N) % T;
-	int extraTria = ((N*(N+1))/2) % T;
 	for(int i = 0; i < T; i++)
 	{
-		// Para corregir cuando N no es divisible por T
-		if(i < extra)
-		{
-			threadLimits[i].start = i * (N/T) + i;
-			threadLimits[i].end = (i + 1) * (N/T) - 1 + (i + 1); 
-		}
-		else
-		{
-			threadLimits[i].start = i * (N/T) + extra;
-			threadLimits[i].end = (i + 1) * (N/T) - 1 + extra; 
-		}
-		if(i < extraVect)
-		{
-			threadLimits[i].vectStart = i * ((N*N)/T) + i;
-			threadLimits[i].vectEnd = (i + 1) * ((N*N)/T) - 1 + (i + 1);
-		}
-		else
-		{
-			threadLimits[i].vectStart = i * ((N*N)/T) + extra;
-			threadLimits[i].vectEnd = (i + 1) * ((N*N)/T) - 1 + extra; 
-		}
-		if(i < extraTria)
-		{
-			threadLimits[i].triaStart = i * (((N*(N+1))/2)/T) + i;
-			threadLimits[i].triaEnd = (i + 1) * (((N*(N+1))/2)/T) - 1 + (i + 1); 
-		}
-		else
-		{
-			threadLimits[i].triaStart = i * (((N*(N+1))/2)/T) + extraTria;
-			threadLimits[i].triaEnd = (i + 1) * (((N*(N+1))/2)/T) - 1 + extraTria; 
-		}
+		threadLimits[i].start = i * (N/T) ;
+		threadLimits[i].end = (i + 1) * (N/T) ; 
+
+		threadLimits[i].vectStart = i * ((N*N)/T) ;
+		threadLimits[i].vectEnd = (i + 1) * ((N*N)/T) ;
+
+		threadLimits[i].triaStart = i * (((N*(N+1))/2)/T) ;
+		threadLimits[i].triaEnd = (i + 1) * (((N*(N+1))/2)/T) ; 
+
 		pthread_create(&threads[i], NULL, &ejercicioDos, &threadLimits[i]);
 	}
 	

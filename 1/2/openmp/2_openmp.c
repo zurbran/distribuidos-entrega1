@@ -39,7 +39,7 @@ void mulMatrices(double *A, double *B, double *C)
 			sum = 0.0;
 			for(k = 0; k < N; k++)
 			{
-				sum += obtenerValorMatrizColumna(A, i, k, N) * obtenerValorMatrizColumna(B, k, j, N);
+				sum += obtenerValorMatrizFila(A, i, k, N) * obtenerValorMatrizColumna(B, k, j, N);
 			}
 			asignarValorMatrizFila(C, i, j, N, sum);
 		}
@@ -207,6 +207,7 @@ int main(int argc,char*argv[])
 	double uAvg = sumarMatriz(U, triaLength) / squareLength;
 	double lAvg = sumarMatriz(L, triaLength) / squareLength;
 	double ulAvg = uAvg * lAvg;
+
 	// Fin de calcular promedios
 	// Paso matriz C a columnas para hacer A*C
 	filasAColumnas(C, tC);

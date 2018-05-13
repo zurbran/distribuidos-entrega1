@@ -181,76 +181,6 @@ Multiplicacion de matrices resultado correcto
 ./1_pthreads 2048 4
 Tiempo en segundos 6.164092
 Multiplicacion de matrices resultado correcto
-gcc -o 2_openmp 2_openmp.c -Wall -Wextra -fopenmp
-gcc -o 2_openmp_seq 2_openmp.c -Wall -Wextra -Wno-unknown-pragmas
-./2_openmp 512 2
-Tiempo en segundos 2.245132
-./2_openmp 512 2
-Tiempo en segundos 2.285228
-./2_openmp 512 2
-Tiempo en segundos 2.092112
-./2_openmp 512 2
-Tiempo en segundos 2.270504
-./2_openmp 512 4
-Tiempo en segundos 1.193699
-./2_openmp 512 4
-Tiempo en segundos 1.256260
-./2_openmp 512 4
-Tiempo en segundos 1.242295
-./2_openmp 512 4
-Tiempo en segundos 1.295808
-./2_openmp 1024 2
-Tiempo en segundos 24.033468
-./2_openmp 1024 2
-Tiempo en segundos 26.662107
-./2_openmp 1024 2
-Tiempo en segundos 26.192665
-./2_openmp 1024 2
-Tiempo en segundos 32.249475
-./2_openmp 1024 4
-Tiempo en segundos 18.685659
-./2_openmp 1024 4
-Tiempo en segundos 17.281567
-./2_openmp 1024 4
-Tiempo en segundos 17.812550
-./2_openmp 1024 4
-Tiempo en segundos 17.399498
-./2_openmp 2048 2
-Tiempo en segundos 302.128857
-./2_openmp 2048 2
-Tiempo en segundos 309.552467
-./2_openmp 2048 2
-Tiempo en segundos 314.864032
-./2_openmp 2048 2
-Tiempo en segundos 308.286442
-./2_openmp 2048 4
-Tiempo en segundos 191.605390
-./2_openmp 2048 4
-Tiempo en segundos 194.101395
-./2_openmp 2048 4
-Tiempo en segundos 200.150992
-./2_openmp 2048 4
-Tiempo en segundos 192.226079
-./2_openmp_seq 512 1
-Tiempo en segundos 3.309718
-./2_openmp_seq 512 1
-Tiempo en segundos 3.470251
-./2_openmp_seq 512 1
-Tiempo en segundos 3.125540
-./2_openmp_seq 512 1
-Tiempo en segundos 3.141900
-./2_openmp_seq 1024 1
-Tiempo en segundos 56.765162
-./2_openmp_seq 1024 1
-Tiempo en segundos 57.118833
-./2_openmp_seq 1024 1
-Tiempo en segundos 58.039135
-./2_openmp_seq 1024 1
-Tiempo en segundos 58.006445
-./2_openmp_seq 2048 1
-Tiempo en segundos 628.503476
-./2_openmp_seq 2048 1
-Tiempo en segundos 634.987229
 gcc -o 2_pthreads 2_pthreads.c -pthread -Wall -Wextra
 ./2_pthreads 512 2
 Tiempo en segundos 1.080354
@@ -373,40 +303,40 @@ Cantidad de pares: 320000000
 ./3_openmp 640000000 4
 Tiempo en segundos 0.465995 
 Cantidad de pares: 320000000
-ubuntu@ubuntu:~/distribuidos-entrega1/1/3/openmp$ ./3_openmp_seq 160000000 1
+./3_openmp_seq 160000000 1
 Tiempo en segundos 0.323206 
 Cantidad de pares: 80000000 
-ubuntu@ubuntu:~/distribuidos-entrega1/1/3/openmp$ ./3_openmp_seq 160000000 1
+./3_openmp_seq 160000000 1
 Tiempo en segundos 0.322715 
 Cantidad de pares: 80000000 
-ubuntu@ubuntu:~/distribuidos-entrega1/1/3/openmp$ ./3_openmp_seq 160000000 1
+./3_openmp_seq 160000000 1
 Tiempo en segundos 0.322754 
 Cantidad de pares: 80000000 
-ubuntu@ubuntu:~/distribuidos-entrega1/1/3/openmp$ ./3_openmp_seq 160000000 1
+./3_openmp_seq 160000000 1
 Tiempo en segundos 0.323270 
 Cantidad de pares: 80000000 
-ubuntu@ubuntu:~/distribuidos-entrega1/1/3/openmp$ ./3_openmp_seq 320000000 1
+./3_openmp_seq 320000000 1
 Tiempo en segundos 0.645494 
 Cantidad de pares: 160000000 
-ubuntu@ubuntu:~/distribuidos-entrega1/1/3/openmp$ ./3_openmp_seq 320000000 1
+./3_openmp_seq 320000000 1
 Tiempo en segundos 0.646495 
 Cantidad de pares: 160000000 
-ubuntu@ubuntu:~/distribuidos-entrega1/1/3/openmp$ ./3_openmp_seq 320000000 1
+./3_openmp_seq 320000000 1
 Tiempo en segundos 0.646435 
 Cantidad de pares: 160000000 
-ubuntu@ubuntu:~/distribuidos-entrega1/1/3/openmp$ ./3_openmp_seq 320000000 1
+./3_openmp_seq 320000000 1
 Tiempo en segundos 0.646099 
 Cantidad de pares: 160000000 
-ubuntu@ubuntu:~/distribuidos-entrega1/1/3/openmp$ ./3_openmp_seq 640000000 1
+./3_openmp_seq 640000000 1
 Tiempo en segundos 1.291188 
 Cantidad de pares: 320000000 
-ubuntu@ubuntu:~/distribuidos-entrega1/1/3/openmp$ ./3_openmp_seq 640000000 1
+./3_openmp_seq 640000000 1
 Tiempo en segundos 1.291264 
 Cantidad de pares: 320000000 
-ubuntu@ubuntu:~/distribuidos-entrega1/1/3/openmp$ ./3_openmp_seq 640000000 1
+./3_openmp_seq 640000000 1
 Tiempo en segundos 1.292871 
 Cantidad de pares: 320000000 
-ubuntu@ubuntu:~/distribuidos-entrega1/1/3/openmp$ ./3_openmp_seq 640000000 1
+./3_openmp_seq 640000000 1
 Tiempo en segundos 1.293148 
 Cantidad de pares: 320000000 
 

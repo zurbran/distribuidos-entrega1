@@ -12,4 +12,6 @@
 \BOOKMARK [2][-]{subsection.3.4}{Pthreads}{section.3}% 12
 \BOOKMARK [1][-]{section.4}{Ejercicio 3}{}% 13
 \BOOKMARK [2][-]{subsection.4.1}{Inciso}{section.4}% 14
-\BOOKMARK [3][-]{subsubsection.4.1.1}{Openmp}{subsection.4.1}% 15
+\BOOKMARK [2][-]{subsection.4.2}{Secuencial}{section.4}% 15
+\BOOKMARK [3][-]{subsubsection.4.2.1}{Openmp}{subsection.4.2}% 16
+\BOOKMARK [1][-]{section.5}{Conclusiones}{}% 17

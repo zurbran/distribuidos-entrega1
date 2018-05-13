@@ -16,28 +16,6 @@ pthread_barrier_t threadBarrier;
 #define obtenerValorMatrizColumna(M, F, C, N) (M[(F)+(N)*(C)])
 #define asignarValorMatrizColumna(M, F, C, N, VALUE) (M[(F)+(N)*(C)] = (VALUE))
 
-typedef struct mulMatricesT_args
-{
-	int start;
-	int end;
-	double *A;
-	int ordenA;
-	double *B;
-	int ordenB;
-	double *C;
-	int ordenC;
-	int N;
-} mulMatricesT_args;
-
-typedef struct filasAColumnasT_args
-{
-	int start;
-	int end;
-	double *A;
-	double *B;
-	int N;
-} filasAColumnasT_args;
-
 typedef struct threads_args
 {
 	int start;
@@ -91,7 +69,7 @@ void *ejercicioUno(void *args)
 	pthread_barrier_wait(&barrier);
 	
 	// Realiza la multiplicacion
-	mulMatrices(A, B, C, arg-start, arg->end);
+	mulMatrices(A, B, C, arg->start, arg->end);
 
 }
 

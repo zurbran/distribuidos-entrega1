@@ -1,0 +1,46 @@
+\subsection{Enunciado}
+
+Resolver con Pthreads y OpenMP la siguiente expresión: R = AA
+Donde A es una matriz de NxN. Analizar el producto AA y utilizar la
+estrategia que proporcione el mejor tiempo de ejecucion.
+Evaluar N=512, 1024 y 2048.
+ 
+\subsubsection{Openmp}
+Utilizando la API OpenMP se implementaron dos funciones claves para la solución del ejercicio mismo, estas son las siguientes:
+
+\begin{enumerate}
+\item \textbf{void filasAColumnas(double *A, double *B):} Pasa una matriz A ordenada en filas a una matriz B ordenada en columnas.
+\item \textbf{void mulMatrices(double *A, double *B, double *C):} Multiplica A*B y almacena el resultado en C. Siendo A ordenada por filas, B por columnas y el resultado C por filas.
+\end{enumerate}
+
+Para la paralelización de dichas funciones se escribe previo al loop \textit{for} la sentencia \textbf{\# pragma omp parallel for}.
+
+A continuación se muestran los macros utilizados junto con la implementación de las funciones mencionadas recientemente:
+
+\ccode{code/ej1open.c}{}
+
+Luego de realizar la operación $$R = AA$$ e imprimir el tiempo que demoró en realizarse, se verifica que el resultado sea el correcto.
+
+\subsection{Pthreads}
+
+Para el caso de las librerías POSIX Threads la principal diferencia en la implementación es que no se debe de usar la clausula \textit{\# pragma omp parallel for} sino que se han de calcular los limites de las iteraciones y asignarles dichos límites a los threads, es decir en otras palabras, redistribuir la carga/componentes de la matriz a ser procesados por cada thread. También a diferencia de la API Openmp, se implementó una función llamada \textbf{*ejercicioUno(void *args)} la cual es la que será ejecutada por cada thread individualmente, ésta misma contiene el código a ejecutar para realizar la operación requerida por el ejercicio.
+
+
+Los límites de cada thread son calculados previamente a asignarles su función y estos mismos son pasados cómo parametro a la función \textbf{void ejercicioUno(void args)}. Agregando así dos nuevos argumentos en las funciones:
+\begin{itemize}
+\item \textit{mulMatrices(double *A, double *B, double *C, int start, int end)}
+\item \textit{filasAColumnas(double *A, double *B, int start, int end)} 
+\end{itemize}
+Para la sincronización al momento de cambiar de función a otra (de \textbf{void filasAColumnas} a \textbf{void mulMatrices}) se implementó una barrera de tipo \textbf{pthread\_baerrir\_t} threadBarrier.
+
+
+Tanto la creación cómo el cerrado de los threads se realiza en el main mediante las funciones \textbf{pthread\_create()} y \textbf{pthread\_join()}.
+
+
+A continuación se detalla el tipo de dato de los argumentos que recibe cada threads y la función que ejecutan:
+
+\ccode{code/ej1pthread.c}{}
+
+\subsection{Secuencial}
+
+Se compila el código de OpenMP pero sin sus librerías haciendo así de esta forma que la clausula \textit{\# pragma parallel} no tenga efecto alguno.

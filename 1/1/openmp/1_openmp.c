@@ -8,16 +8,15 @@
 
 // Cantidad de threads
 int T = 1;
+int N;
 
 #define obtenerValorMatrizFila(M, F, C, N) (M[(F)*(N)+(C)])
-#define asignarValorMatrizFila(M, F, C, N, VALUE) (M[(F)*(N)+(C)] = (VALUE))
+#define asignarValorMatrizFila(M, F, C, N, VALOR) (M[(F)*(N)+(C)] = (VALOR))
 
 #define obtenerValorMatrizColumna(M, F, C, N) (M[(F)+(N)*(C)])
-#define asignarValorMatrizColumna(M, F, C, N, VALUE) (M[(F)+(N)*(C)] = (VALUE))
+#define asignarValorMatrizColumna(M, F, C, N, VALOR) (M[(F)+(N)*(C)] = (VALOR))
 
-
-// C = AB, siendo A por filas, B por columnas, A por filas
-void mulMatrices(double *A, double *B, double *C, int N)
+void mulMatrices(double *A, double *B, double *C)
 {
 	double sum;
 	int i, j, k;
@@ -36,17 +35,16 @@ void mulMatrices(double *A, double *B, double *C, int N)
 	}  
 }
 
-void transponer(double *A, double *B, int N)
+void filasAColumnas(double *A, double *B)
 {
-	int i, j;
-	#pragma omp parallel for private (j)
-	for(i = 0; i < N; i++)
+	#pragma omp parallel for
+	for(int i = 0; i < N; i++)
 	{
-		for(j = 0; j < N; j++)
+		for(int j = 0; j < N; j++)
 		{
-			B[i+j*N] = A[i*N+j];
+			asignarValorMatrizColumna(B, i, j, N, obtenerValorMatrizFila(A, i, j, N));
 		}
-	}  
+	}
 }
 
 //Para calcular tiempo
@@ -62,9 +60,8 @@ double dwalltime()
 
 int main(int argc,char*argv[])
 {
-	double *A, *B, *C;
+	double *A, *tA, *C;
 	double timetick;
-	int N;
 
 	if ((argc != 3) || ((N = atoi(argv[1])) <= 0) || ((T = atoi(argv[2])) <= 0))
 	{
@@ -78,9 +75,9 @@ int main(int argc,char*argv[])
 
 	// Aloca memoria para las matrices
 	// A sera la matriz a multiplicar por si mismo
-	// B una copia de A almacenada por columnas
+	// tA una copia de A almacenada por columnas
 	A=(double*)malloc(sizeof(double)*N*N);
-	B=(double*)malloc(sizeof(double)*N*N);
+	tA=(double*)malloc(sizeof(double)*N*N);
 	C=(double*)malloc(sizeof(double)*N*N);
 
 	for(int i = 0; i < N; i++)
@@ -93,11 +90,11 @@ int main(int argc,char*argv[])
 
 	timetick = dwalltime();
 
-	// Copia A en B pero ordenado por columnas
-	transponer(A, B, N);
+	// Copia A en tA pero ordenado por columnas
+	filasAColumnas(A, tA);
 	
-	// Multiplico A*B, siendo B = A ordenado por columnas
-	mulMatrices(A, B, C, N);
+	// Multiplico A*tA, siendo tA = A ordenado por columnas
+	mulMatrices(A, tA, C);
 
 	printf("Tiempo en segundos %f\n", dwalltime() - timetick);
 
@@ -125,7 +122,7 @@ int main(int argc,char*argv[])
 	}
 
 	free(A);
-	free(B);
+	free(tA);
 	free(C);
 	return(0);
 }

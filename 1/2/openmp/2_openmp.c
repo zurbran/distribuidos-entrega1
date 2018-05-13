@@ -18,9 +18,6 @@
 #define obtenerValorMatrizColumna(M, F, C, N) (M[(F)+(N)*(C)])
 #define asignarValorMatrizColumna(M, F, C, N, VALOR) (M[(F)+(N)*(C)] = (VALOR))
 
-#define obtenerValorMatrizTriaSupColumna(M, F, C) (M[(F)+((C)*((C)+1))/2])
-#define asignarValorMatrizTriaSupColumna(M, F, C, VALOR) (M[(F)+((C)*((C)+1))/2]= (VALOR))
-
 #define obtenerValorMatrizTriaInfFila(M, F, C) (M[(C)+((F)*((F) + 1))/2])
 #define asignarValorMatrizTriaInfFila(M, F, C, VALOR) (M[(C)+((F)*((F) + 1))/2]= (VALOR))
 

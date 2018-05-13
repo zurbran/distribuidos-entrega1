@@ -35,7 +35,6 @@ typedef struct threads_args
 	int vectEnd;
 	int	triaStart;
 	int	triaEnd;
-	int N;
 }threads_args;
 
 void escalarPorMatriz(double *A, double *C, double escalar, int start, int end)
@@ -355,7 +354,6 @@ int main(int argc,char*argv[])
 			threadLimits[i].triaStart = i * (((N*(N+1))/2)/T) + extraTria;
 			threadLimits[i].triaEnd = (i + 1) * (((N*(N+1))/2)/T) - 1 + extraTria; 
 		}
-		threadLimits[i].N = N;
 		pthread_create(&threads[i], NULL, &ejercicioDos, &threadLimits[i]);
 	}
 	

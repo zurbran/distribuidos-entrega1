@@ -230,115 +230,6 @@ Tiempo en segundos 39.468574
 Tiempo en segundos 38.809931
 ./2_pthreads 2048 4
 Tiempo en segundos 39.125665
-gcc -o 3_openmp 3_openmp.c -Wall -Wextra -fopenmp
-./3_openmp 160000000 2
-Tiempo en segundos 0.220874 
-Cantidad de pares: 80000000 
-./3_openmp 160000000 2
-Tiempo en segundos 0.222830 
-Cantidad de pares: 80000000 
-./3_openmp 160000000 2
-Tiempo en segundos 0.219548 
-Cantidad de pares: 80000000 
-./3_openmp 160000000 2
-Tiempo en segundos 0.220870 
-Cantidad de pares: 80000000 
-./3_openmp 160000000 4
-Tiempo en segundos 0.111642 
-Cantidad de pares: 80000000 
-./3_openmp 160000000 4
-Tiempo en segundos 0.112250 
-Cantidad de pares: 80000000 
-./3_openmp 160000000 4
-Tiempo en segundos 0.111886 
-Cantidad de pares: 80000000 
-./3_openmp 160000000 4
-Tiempo en segundos 0.111810 
-Cantidad de pares: 80000000 
-./3_openmp 320000000 2
-Tiempo en segundos 0.440466 
-Cantidad de pares: 160000000 
-./3_openmp 320000000 2
-Tiempo en segundos 0.442127 
-Cantidad de pares: 160000000 
-./3_openmp 320000000 2
-Tiempo en segundos 0.440756 
-Cantidad de pares: 160000000 
-./3_openmp 320000000 2
-Tiempo en segundos 0.444150 
-Cantidad de pares: 160000000 
-./3_openmp 320000000 4
-Tiempo en segundos 0.224115 
-Cantidad de pares: 160000000 
-./3_openmp 320000000 4
-Tiempo en segundos 0.224191 
-Cantidad de pares: 160000000 
-./3_openmp 320000000 4
-Tiempo en segundos 0.223279 
-Cantidad de pares: 160000000 
-./3_openmp 320000000 4
-Tiempo en segundos 0.223924 
-Cantidad de pares: 160000000 
-./3_openmp 640000000 2
-Tiempo en segundos 0.880153 
-Cantidad de pares: 320000000 
-./3_openmp 640000000 2
-Tiempo en segundos 0.882223 
-Cantidad de pares: 320000000 
-./3_openmp 640000000 2
-Tiempo en segundos 0.881136 
-Cantidad de pares: 320000000 
-./3_openmp 640000000 2
-Tiempo en segundos 0.881558 
-Cantidad de pares: 320000000 
-./3_openmp 640000000 4
-Tiempo en segundos 0.448076 
-Cantidad de pares: 320000000 
-./3_openmp 640000000 4
-Tiempo en segundos 0.445207 
-Cantidad de pares: 320000000 
-./3_openmp 640000000 4
-Tiempo en segundos 0.534994 
-Cantidad de pares: 320000000 
-./3_openmp 640000000 4
-Tiempo en segundos 0.465995 
-Cantidad de pares: 320000000
-./3_openmp_seq 160000000 1
-Tiempo en segundos 0.323206 
-Cantidad de pares: 80000000 
-./3_openmp_seq 160000000 1
-Tiempo en segundos 0.322715 
-Cantidad de pares: 80000000 
-./3_openmp_seq 160000000 1
-Tiempo en segundos 0.322754 
-Cantidad de pares: 80000000 
-./3_openmp_seq 160000000 1
-Tiempo en segundos 0.323270 
-Cantidad de pares: 80000000 
-./3_openmp_seq 320000000 1
-Tiempo en segundos 0.645494 
-Cantidad de pares: 160000000 
-./3_openmp_seq 320000000 1
-Tiempo en segundos 0.646495 
-Cantidad de pares: 160000000 
-./3_openmp_seq 320000000 1
-Tiempo en segundos 0.646435 
-Cantidad de pares: 160000000 
-./3_openmp_seq 320000000 1
-Tiempo en segundos 0.646099 
-Cantidad de pares: 160000000 
-./3_openmp_seq 640000000 1
-Tiempo en segundos 1.291188 
-Cantidad de pares: 320000000 
-./3_openmp_seq 640000000 1
-Tiempo en segundos 1.291264 
-Cantidad de pares: 320000000 
-./3_openmp_seq 640000000 1
-Tiempo en segundos 1.292871 
-Cantidad de pares: 320000000 
-./3_openmp_seq 640000000 1
-Tiempo en segundos 1.293148 
-Cantidad de pares: 320000000
 gcc -o 2_openmp 2_openmp.c -Wall -Wextra -fopenmp
 gcc -o 2_openmp_seq 2_openmp.c -Wall -Wextra -Wno-unknown-pragmas
 ./2_openmp 512 2
@@ -413,6 +304,117 @@ Tiempo en segundos 124.173877
 Tiempo en segundos 124.194835
 ./2_openmp_seq 2048 1
 Tiempo en segundos 124.156582
+gcc -o 3_openmp 3_openmp.c -Wall -Wextra -fopenmp
+gcc -o 3_openmp_seq 3_openmp.c -Wall -Wextra -Wno-unknown-pragmas
+./2_openmp 200000000 2
+Tiempo en segundos 0.275738 
+Cantidad de pares: 100000000 
+./2_openmp 200000000 2
+Tiempo en segundos 0.275974 
+Cantidad de pares: 100000000 
+./2_openmp 200000000 2
+Tiempo en segundos 0.276398 
+Cantidad de pares: 100000000 
+./2_openmp 200000000 2
+Tiempo en segundos 0.279372 
+Cantidad de pares: 100000000 
+./2_openmp 200000000 4
+Tiempo en segundos 0.139328 
+Cantidad de pares: 100000000 
+./2_openmp 200000000 4
+Tiempo en segundos 0.140625 
+Cantidad de pares: 100000000 
+./2_openmp 200000000 4
+Tiempo en segundos 0.139825 
+Cantidad de pares: 100000000 
+./2_openmp 200000000 4
+Tiempo en segundos 0.140283 
+Cantidad de pares: 100000000 
+./2_openmp 400000000 2
+Tiempo en segundos 0.549602 
+Cantidad de pares: 200000000 
+./2_openmp 400000000 2
+Tiempo en segundos 0.553924 
+Cantidad de pares: 200000000 
+./2_openmp 400000000 2
+Tiempo en segundos 0.556693 
+Cantidad de pares: 200000000 
+./2_openmp 400000000 2
+Tiempo en segundos 0.554160 
+Cantidad de pares: 200000000 
+./2_openmp 400000000 4
+Tiempo en segundos 0.400089 
+Cantidad de pares: 200000000 
+./2_openmp 400000000 4
+Tiempo en segundos 0.280205 
+Cantidad de pares: 200000000 
+./2_openmp 400000000 4
+Tiempo en segundos 0.337908 
+Cantidad de pares: 200000000 
+./2_openmp 400000000 4
+Tiempo en segundos 0.279235 
+Cantidad de pares: 200000000 
+./2_openmp 800000000 2
+Tiempo en segundos 1.111865 
+Cantidad de pares: 400000000 
+./2_openmp 800000000 2
+Tiempo en segundos 1.102536 
+Cantidad de pares: 400000000 
+./2_openmp 800000000 2
+Tiempo en segundos 1.108045 
+Cantidad de pares: 400000000 
+./2_openmp 800000000 2
+Tiempo en segundos 1.099889 
+Cantidad de pares: 400000000 
+./2_openmp 800000000 4
+Tiempo en segundos 0.559612 
+Cantidad de pares: 400000000 
+./2_openmp 800000000 4
+Tiempo en segundos 0.565615 
+Cantidad de pares: 400000000 
+./2_openmp 800000000 4
+Tiempo en segundos 0.558706 
+Cantidad de pares: 400000000 
+./2_openmp 800000000 4
+Tiempo en segundos 0.557396 
+Cantidad de pares: 400000000 
+./2_openmp_seq 200000000 1
+Tiempo en segundos 0.403758 
+Cantidad de pares: 100000000 
+./2_openmp_seq 200000000 1
+Tiempo en segundos 0.403582 
+Cantidad de pares: 100000000 
+./2_openmp_seq 200000000 1
+Tiempo en segundos 0.404126 
+Cantidad de pares: 100000000 
+./2_openmp_seq 200000000 1
+Tiempo en segundos 0.403540 
+Cantidad de pares: 100000000 
+./2_openmp_seq 400000000 1
+Tiempo en segundos 0.807082 
+Cantidad de pares: 200000000 
+./2_openmp_seq 400000000 1
+Tiempo en segundos 0.807181 
+Cantidad de pares: 200000000 
+./2_openmp_seq 400000000 1
+Tiempo en segundos 0.807069 
+Cantidad de pares: 200000000 
+./2_openmp_seq 400000000 1
+Tiempo en segundos 0.807320 
+Cantidad de pares: 200000000 
+./2_openmp_seq 800000000 1
+Tiempo en segundos 1.614051 
+Cantidad de pares: 400000000 
+./2_openmp_seq 800000000 1
+Tiempo en segundos 1.616184 
+Cantidad de pares: 400000000 
+./2_openmp_seq 800000000 1
+Tiempo en segundos 1.614092 
+Cantidad de pares: 400000000 
+./2_openmp_seq 800000000 1
+Tiempo en segundos 1.613978 
+Cantidad de pares: 400000000 
+
 
 
 

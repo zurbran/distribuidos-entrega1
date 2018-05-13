@@ -338,7 +338,82 @@ Tiempo en segundos 1.292871
 Cantidad de pares: 320000000 
 ./3_openmp_seq 640000000 1
 Tiempo en segundos 1.293148 
-Cantidad de pares: 320000000 
+Cantidad de pares: 320000000
+gcc -o 2_openmp 2_openmp.c -Wall -Wextra -fopenmp
+gcc -o 2_openmp_seq 2_openmp.c -Wall -Wextra -Wno-unknown-pragmas
+./2_openmp 512 2
+Tiempo en segundos 0.993753
+./2_openmp 512 2
+Tiempo en segundos 0.971703
+./2_openmp 512 2
+Tiempo en segundos 0.970493
+./2_openmp 512 2
+Tiempo en segundos 0.971656
+./2_openmp 512 4
+Tiempo en segundos 0.522875
+./2_openmp 512 4
+Tiempo en segundos 0.505946
+./2_openmp 512 4
+Tiempo en segundos 0.510418
+./2_openmp 512 4
+Tiempo en segundos 0.510535
+./2_openmp 1024 2
+Tiempo en segundos 7.824693
+./2_openmp 1024 2
+Tiempo en segundos 7.832195
+./2_openmp 1024 2
+Tiempo en segundos 7.826945
+./2_openmp 1024 2
+Tiempo en segundos 7.822962
+./2_openmp 1024 4
+Tiempo en segundos 3.972467
+./2_openmp 1024 4
+Tiempo en segundos 3.973923
+./2_openmp 1024 4
+Tiempo en segundos 3.976749
+./2_openmp 1024 4
+Tiempo en segundos 3.972721
+./2_openmp 2048 2
+Tiempo en segundos 62.263788
+./2_openmp 2048 2
+Tiempo en segundos 62.274263
+./2_openmp 2048 2
+Tiempo en segundos 62.274307
+./2_openmp 2048 2
+Tiempo en segundos 62.273767
+./2_openmp 2048 4
+Tiempo en segundos 31.458613
+./2_openmp 2048 4
+Tiempo en segundos 31.605888
+./2_openmp 2048 4
+Tiempo en segundos 31.790544
+./2_openmp 2048 4
+Tiempo en segundos 31.488272
+./2_openmp_seq 512 1
+Tiempo en segundos 1.914436
+./2_openmp_seq 512 1
+Tiempo en segundos 1.912922
+./2_openmp_seq 512 1
+Tiempo en segundos 1.914814
+./2_openmp_seq 512 1
+Tiempo en segundos 1.913662
+./2_openmp_seq 1024 1
+Tiempo en segundos 15.489684
+./2_openmp_seq 1024 1
+Tiempo en segundos 15.582385
+./2_openmp_seq 1024 1
+Tiempo en segundos 15.497962
+./2_openmp_seq 1024 1
+Tiempo en segundos 15.497197
+./2_openmp_seq 2048 1
+Tiempo en segundos 124.514384
+./2_openmp_seq 2048 1
+Tiempo en segundos 124.173877
+./2_openmp_seq 2048 1
+Tiempo en segundos 124.194835
+./2_openmp_seq 2048 1
+Tiempo en segundos 124.156582
+
 
 
 
